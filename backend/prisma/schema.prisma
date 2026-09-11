@@ -1,0 +1,121 @@
+// این فایل مدل کامل دیتابیس پروژه است
+// بعد از هر تغییر: npm run prisma:migrate
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  PROFESSOR
+}
+
+enum FieldType {
+  TEXT
+  TEXTAREA
+  DATE
+  IMAGE
+  LINK
+}
+
+enum SectionPlacement {
+  TOP_MENU
+  SIDEBAR
+}
+
+model User {
+  id        Int        @id @default(autoincrement())
+  email     String     @unique
+  password  String
+  role      Role
+  professor Professor?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model Professor {
+  id           Int      @id @default(autoincrement())
+  userId       Int      @unique
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  slug         String   @unique
+  fullName     String
+  department   String
+  academicRank String?
+  avatarUrl    String?
+
+  themeColor   String   @default("#1b2a4a")
+  themeFont    String   @default("vazirmatn")
+
+  isActive     Boolean  @default(true)
+
+  data         ProfessorSectionData[]
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Section {
+  id           Int      @id @default(autoincrement())
+  key          String   @unique
+  titleFa      String
+  titleEn      String
+  isActive     Boolean  @default(true)
+  isRepeatable Boolean  @default(false)
+  order        Int      @default(0)
+
+  // ساختار دوسطحی: یک بخش می‌تواند زیرمجموعه‌ی یک بخش دیگر باشد
+  // (مثلاً «مقالات چاپ‌شده در مجله» زیرمجموعه‌ی «سوابق پژوهشی»)
+  // بخش والد معمولاً خودش فیلد/دیتا ندارد، فقط یک دسته‌بندی برای زیربخش‌هایش است
+  parentSectionId Int?
+  parent          Section?  @relation("SectionChildren", fields: [parentSectionId], references: [id], onDelete: Restrict)
+  children        Section[] @relation("SectionChildren")
+
+  // این بخش کجای صفحه پروفایل رندر شود: منوی بالای صفحه یا سایدبار کناری
+  placement    SectionPlacement @default(TOP_MENU)
+
+  fields       SectionField[]
+  data         ProfessorSectionData[]
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model SectionField {
+  id        Int      @id @default(autoincrement())
+  sectionId Int
+  section   Section  @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+
+  key       String
+  labelFa   String
+  labelEn   String
+  fieldType FieldType
+  order     Int      @default(0)
+
+  @@unique([sectionId, key])
+}
+
+// دیتای واقعی که هر استاد در هر بخش وارد کرده
+model ProfessorSectionData {
+  id          Int       @id @default(autoincrement())
+  professorId Int
+  professor   Professor @relation(fields: [professorId], references: [id], onDelete: Cascade)
+
+  sectionId   Int
+  section     Section   @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+
+  groupIndex  Int       @default(0) // برای بخش‌های تکرارشونده: شماره آیتم (مقطع اول=0، دوم=1، ...)
+  fieldKey    String    // معادل SectionField.key
+  value       String    @db.Text
+  lang        String    @default("fa") // fa | en
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([professorId, sectionId])
+}
