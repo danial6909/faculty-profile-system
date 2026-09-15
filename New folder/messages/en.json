@@ -1,0 +1,277 @@
+{
+  "Metadata": {
+    "siteName": "Faculty & Researchers Directory",
+    "homeTitle": "Faculty and Researcher Directory",
+    "homeDescription": "Search academic records, publications, research interests and contact details of the university's faculty members and researchers, by faculty and department."
+  },
+  "Faculty": {
+    "computerEngineering": "Faculty of Computer Engineering",
+    "electricalEngineering": "Faculty of Electrical Engineering",
+    "basicSciences": "Faculty of Basic Sciences",
+    "managementEconomics": "Faculty of Management & Economics",
+    "medicineBiotech": "Faculty of Medicine & Biotechnology"
+  },
+  "Group": {
+    "digitalSystems": "Department of Digital Systems Engineering",
+    "biotechnology": "Department of Biotechnology",
+    "aiRobotics": "Department of AI & Robotics",
+    "dataScience": "Department of Data Science & Biostatistics",
+    "fluidDynamics": "Department of Fluid Dynamics & Energy Conversion",
+    "financialEconomics": "Department of Economics & Financial Management"
+  },
+  "Rank": {
+    "assistant": "Assistant Professor",
+    "associate": "Associate Professor",
+    "full": "Full Professor"
+  },
+  "RoomType": {
+    "office": "Room",
+    "lab": "Lab"
+  },
+  "Badge": {
+    "hMohammadi": "Actively admitting: PhD and Master's students",
+    "mSoleimani": "Actively recruiting for the gene-therapy research team",
+    "aRezaei": "Actively admitting Master's and PhD students",
+    "mAbbasi": "Industry collaboration projects with oil & gas sector",
+    "sKazemi": "Actively recruiting postdoctoral researchers and PhD students"
+  },
+  "ProfileGenerated": {
+    "positionChip": "Director, {group}",
+    "summary": "A {rankLevel} researcher in {interests}, with over {years} years of teaching, advanced research, and participation in {projects} national research and industrial projects.",
+    "rankLevelSenior": "senior",
+    "rankLevelActive": "active",
+    "officeHours": { "mon": "Mondays", "wed": "Wednesdays" },
+    "stat": {
+      "projects": "Industry Projects",
+      "projectsNote": "Industry collaboration contracts",
+      "articles": "Indexed Articles",
+      "articlesNote": "Q1 and Q2 journals",
+      "citations": "Total Citations",
+      "citationsNote": "In the current year",
+      "hIndex": "H-Index",
+      "hIndexNote": "Scopus & Google Scholar"
+    },
+    "degree": { "phd": "Ph.D.", "msc": "M.Sc.", "bsc": "B.Sc. Engineering" },
+    "institution": {
+      "sharif": "Sharif University of Technology",
+      "tehran": "University of Tehran",
+      "amirkabir": "Amirkabir University of Technology",
+      "isfahan": "Isfahan University of Technology"
+    },
+    "role": {
+      "groupDirector": "Director, {group}",
+      "researchDeputy": "Vice Dean for Research and Technology"
+    },
+    "years": {
+      "currentSince1400": "2021 - present",
+      "1397to1400": "2018 - 2021"
+    },
+    "course": {
+      "advanced": "Advanced {topic}",
+      "fundamentals": "Fundamentals of {topic}"
+    },
+    "level": {
+      "gradPhd": "Master's & PhD",
+      "grad": "Master's",
+      "undergrad": "Undergraduate"
+    },
+    "term": { "current": "Current term" },
+    "areaDescription": "Developing new models and methods in {topic}, with a focus on real-world applications and reliable performance.",
+    "appliedAreaTitle": "Applied Research & Industry Collaboration",
+    "appliedAreaDescription": "Transferring the group's research outcomes into industrial solutions through {count} active R&D contracts.",
+    "time": {
+      "satMorning": "Saturdays 10:00 - 12:00",
+      "monAfternoon": "Mondays 13:30 - 15:30",
+      "days12Ago": "12 days ago",
+      "weeks3Ago": "3 weeks ago"
+    },
+    "announcement1Title": "New thesis registration window announced",
+    "announcement1Text": "Interested students may submit their defense request for the current term until the end of the month.",
+    "announcement2Title": "Proposal defense sessions next week",
+    "announcement2Text": "The exact schedule will be announced through the education portal.",
+    "labHighlightFallback": "Research collaboration opportunity at {group}"
+  },
+  "HomeStats": {
+    "faculties": "Specialized Faculties",
+    "labs": "Research Labs",
+    "articles": "Indexed Publications (ISI/ISC)",
+    "activeFaculty": "Active Faculty Members"
+  },
+  "Header": {
+    "universityName": "Quchan University of Technology",
+    "portalTag": "Faculty Directory Portal",
+    "home": "Home",
+    "facultiesLabel": "Faculties & Departments",
+    "journalsLabel": "Journals & Articles",
+    "journalsIndexed": "Indexed Journals",
+    "articlesLatest": "Latest Published Articles",
+    "guide": "Student Guide",
+    "aboutLabel": "About",
+    "aboutIntro": "About the Portal",
+    "aboutContact": "Contact Us",
+    "search": "Search",
+    "login": "Faculty Login",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "Hero": {
+    "eyebrow": "The university's faculty and research-hub directory",
+    "title": "Faculty & Researchers Directory",
+    "subtitle": "Search and access academic records, publications, research interests, and contact details of the university's leading faculty and researchers",
+    "searchPlaceholder": "Search by name, research keyword, or department...",
+    "popularFields": "Popular fields:"
+  },
+  "Filters": {
+    "label": "Filters",
+    "allFaculties": "All Faculties",
+    "sortBy": "Sort: {label}",
+    "sortCitations": "Most Citations",
+    "sortArticles": "Most Articles",
+    "sortAz": "Name (A-Z)",
+    "acceptingOnly": "Currently accepting students only",
+    "showing": "Showing {shown} of {filtered} faculty ({total} active records)",
+    "noResults": "No faculty member matches the selected filters.",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "ProfessorCard": {
+    "articles": "Indexed Articles",
+    "citations": "Citations",
+    "interests": "Research interests:",
+    "viewProfile": "View Profile",
+    "emailAria": "Email {name}"
+  },
+  "Footer": {
+    "highlight1Title": "International Research Collaboration",
+    "highlight1Text": "Study opportunities, joint research grants, and faculty exchange with leading universities worldwide.",
+    "highlight2Title": "Partner Lab Network",
+    "highlight2Text": "Access advanced lab equipment and book time slots for interdisciplinary research.",
+    "highlight3Title": "Thesis Admission Guide",
+    "highlight3Text": "Guidelines for choosing a supervisor and viewing open department capacity for the new term.",
+    "orgLinksTitle": "Organization Links",
+    "facultiesLink": "Faculties & Departments",
+    "journalsLink": "Journals & Publications Portal",
+    "panelLink": "Faculty Staff Portal",
+    "supportTitle": "Support & Contact",
+    "phone": "Public Relations: +98-21-8899 (ext. 4)",
+    "referencesTitle": "References & Rankings",
+    "iscLink": "Islamic World Science Citation Center (ISC)",
+    "msrtLink": "Ministry of Science, Research & Technology",
+    "accreditationLink": "Research Development & Accreditation Center",
+    "address": "Central University Campus, Research Center Building, Tehran, Iran",
+    "copyright": "All rights reserved to the University Faculty Directory."
+  },
+  "ProfileHero": {
+    "breadcrumbFaculties": "Faculties",
+    "breadcrumbProfileOf": "{name}'s Profile",
+    "verified": "Verified",
+    "rankFrom": "Academic rank from {faculty}",
+    "copyLink": "Copy Profile Link",
+    "copyLinkDone": "Link copied",
+    "downloadResume": "Download CV (PDF)",
+    "scheduleMeeting": "Schedule a Meeting"
+  },
+  "ProfileSidebar": {
+    "contactInfoTitle": "Contact & Address",
+    "officeHoursTitle": "Office hours:",
+    "linksTitle": "Research profiles & links:",
+    "currentCoursesTitle": "Current Term Courses",
+    "announcementsTitle": "Latest Announcements",
+    "galleryTitle": "Gallery & Lab",
+    "activeAdmission": "Actively Admitting",
+    "moreInfo": "Learn more",
+    "messageFormTitle": "Send a Direct Message",
+    "phone": "+98-21-8899-0000 (ext. 123)"
+  },
+  "ContactForm": {
+    "namePlaceholder": "Full name",
+    "emailPlaceholder": "Academic / personal email",
+    "subjectPlaceholder": "Subject",
+    "messagePlaceholder": "Message",
+    "submit": "Send Message",
+    "sent": "Your message has been sent. {name} will respond as soon as possible."
+  },
+  "Tabs": {
+    "bio": "Bio & Interests",
+    "education": "Education & Roles",
+    "teaching": "Teaching",
+    "publications": "Publications",
+    "students": "Research Team & Students",
+    "collaborators": "Collaborators",
+    "emptyMessage": "This section hasn't been filled in by the faculty member yet."
+  },
+  "BioTab": {
+    "aboutTitle": "About & Academic Background",
+    "citationTrendLabel": "Annual Citation Trend (Scopus)",
+    "researchAreasTitle": "Research Areas & Specializations"
+  },
+  "EducationTab": {
+    "educationTitle": "Education & Academic Degrees",
+    "executiveTitle": "Administrative & Executive Roles"
+  },
+  "TeachingTab": {
+    "title": "Teaching History (Past Terms)"
+  },
+  "PublicationsTab": {
+    "title": "Selected Publications",
+    "citationsSuffix": "citations",
+    "openAccess": "Open Access"
+  },
+  "ComingSoon": {
+    "title": "This section is coming soon",
+    "description": "Our team is working on this page. Please check back a bit later.",
+    "backHome": "Back to Home"
+  },
+  "Chart": {
+    "tooltipLabel": "Citations",
+    "yearLabel": "Year {year}"
+  },
+   "Login": {
+    "secureProtocol": "Secure protocol: TLS 1.3 / 256-bit",
+    "portalTitle": "Unified Faculty & Researcher Login Portal",
+    "portalSubtitle": "University IT, Statistics & Cyberspace Security Center",
+    "deputyChip": "Research & Technology Deputy - Faculty Affairs Directorate",
+    "sideHeading": "Unified Faculty Achievements & Academic CV System",
+    "sideParagraph": "Simultaneously manage international profiles (Scopus, WoS, ORCID), academic promotion, publications, books, research records, and annual promotion files with online approval from the tenure committee.",
+    "statNetworkUptime": "Secure network uptime",
+    "statProfileCompletion": "International profile completion",
+    "statActiveMembers": "Active faculty members",
+    "guideTitle": "Guide for New Faculty & Fellows",
+    "guideSubtitle": "Download the guide for activating your personal portal and setting your website link",
+    "supportTitle": "Technical Support & Tenure Committee Office",
+    "supportEmailLabel": "Tenure committee email:",
+    "supportPhoneLabel": "IT help desk (internal):",
+    "supportHours": "In-person & phone support hours: 8:00 - 15:30",
+    "ticketingSystem": "Ticketing system",
+    "version": "Version 3.8.4 (stable)",
+    "identityCertificate": "Identity verification certificate",
+    "ssoBadge": "Central Single Sign-On (SSO)",
+    "formTitle": "Sign in to the Faculty System",
+    "formSubtitle": "Access the research portal, annual promotion, grants, and CV editing",
+    "identifierLabel": "Faculty ID or university email",
+    "identifierPlaceholder": "Default: 9-digit ID or organizational username",
+    "passwordLabel": "Password",
+    "forgotPassword": "Forgot your password?",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "captchaLabel": "Security verification code",
+    "captchaHint": "English or Persian digits",
+    "captchaRefresh": "Generate new code",
+    "captchaPlaceholder": "5-digit code shown",
+    "rememberSession": "Remember this session on this secure computer (max 8 hours)",
+    "submit": "Sign in securely",
+    "submitting": "Signing in...",
+    "orDivider": "Or sign in via government/organizational gateways",
+    "casButton": "University Central Authentication Gateway (CAS)",
+    "govButton": "National Smart Government Services Gateway",
+    "securityNoticeTitle": "IT Security & Usage Requirements:",
+    "securityNoticeText": "Access to this system is restricted to official, contract, and visiting faculty members. All activity, IP addresses, and access records are logged and monitored.",
+    "footerCopyright": "© 2024 All rights reserved to the University IT, Statistics & Security Center.",
+    "footerPrivacy": "Faculty Privacy Policy",
+    "footerPromotion": "Promotion & Rank Regulations",
+    "footerNewUsername": "Request a new username",
+    "errorCaptcha": "The security code you entered is incorrect.",
+    "errorGeneric": "Sign in failed."
+  }
+}

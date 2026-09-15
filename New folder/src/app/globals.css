@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+/* =====================================================================
+   DESIGN TOKENS
+   ---------------------------------------------------------------------
+   Two layers, on purpose:
+
+   1) Static palette (--palette-*) — the raw color ramps from the design
+      system. These never change at runtime.
+
+   2) Brand/semantic tokens (--brand-*, --font-*) — these are what the
+      UI actually uses. They default to the site-wide palette but are
+      declared as *plain CSS custom properties on :root*, not baked
+      into @theme. That means a professor's profile page (or the admin
+      theme editor later) can override them by setting inline style
+      vars on a wrapper, e.g.:
+
+        <div style={{ "--brand-primary": professor.themeColor }}>
+
+      ...and every utility class below (bg-brand, text-brand, ring-brand,
+      border-brand, etc.) picks up the new color instantly — no Tailwind
+      config rebuild, no per-component prop drilling.
+   ===================================================================== */
+
+@theme {
+  /* ---- Primary (brand navy) — custom ramp derived from #0F2B48 ---- */
+  --color-primary-50: #F3F7FC;
+  --color-primary-100: #E3EDF8;
+  --color-primary-200: #C2D8F0;
+  --color-primary-300: #94BCE6;
+  --color-primary-400: #5998D9;
+  --color-primary-500: #2A79CB;
+  --color-primary-600: #2060A2;
+  --color-primary-700: #1A4E84;
+  --color-primary-800: #143C66;
+  --color-primary-900: #0F2B48;
+  --color-primary-950: #0B1C2E;
+
+  /* ---- Secondary (teal), Tertiary (amber), Neutral (slate) ----
+     These line up 1:1 with Tailwind's stock teal / amber / slate ramps,
+     so we simply alias them — one less palette to hand-maintain. */
+  --color-secondary-50: var(--color-teal-50);
+  --color-secondary-100: var(--color-teal-100);
+  --color-secondary-200: var(--color-teal-200);
+  --color-secondary-300: var(--color-teal-300);
+  --color-secondary-400: var(--color-teal-400);
+  --color-secondary-500: var(--color-teal-500);
+  --color-secondary-600: var(--color-teal-600);
+  --color-secondary-700: var(--color-teal-700);
+  --color-secondary-800: var(--color-teal-800);
+  --color-secondary-900: var(--color-teal-900);
+  --color-secondary-950: var(--color-teal-950);
+
+  --color-tertiary-50: var(--color-amber-50);
+  --color-tertiary-100: var(--color-amber-100);
+  --color-tertiary-200: var(--color-amber-200);
+  --color-tertiary-300: var(--color-amber-300);
+  --color-tertiary-400: var(--color-amber-400);
+  --color-tertiary-500: var(--color-amber-500);
+  --color-tertiary-600: var(--color-amber-600);
+  --color-tertiary-700: var(--color-amber-700);
+  --color-tertiary-800: var(--color-amber-800);
+  --color-tertiary-900: var(--color-amber-900);
+  --color-tertiary-950: var(--color-amber-950);
+
+  --color-neutral-50: var(--color-slate-50);
+  --color-neutral-100: var(--color-slate-100);
+  --color-neutral-200: var(--color-slate-200);
+  --color-neutral-300: var(--color-slate-300);
+  --color-neutral-400: var(--color-slate-400);
+  --color-neutral-500: var(--color-slate-500);
+  --color-neutral-600: var(--color-slate-600);
+  --color-neutral-700: var(--color-slate-700);
+  --color-neutral-800: var(--color-slate-800);
+  --color-neutral-900: var(--color-slate-900);
+  --color-neutral-950: var(--color-slate-950);
+
+  /* Fonts registered as design tokens too (see layout.js for the
+     next/font declarations that feed these variables). */
+  --font-sans: var(--font-vazirmatn), "Vazirmatn", Tahoma, sans-serif;
+  --font-heading: var(--font-vazirmatn), "Vazirmatn", Tahoma, sans-serif;
+
+  --shadow-card: 0 1px 2px 0 rgb(15 23 42 / 0.04), 0 1px 3px 0 rgb(15 23 42 / 0.06);
+  --shadow-card-hover: 0 8px 24px -4px rgb(15 43 72 / 0.12), 0 2px 6px -2px rgb(15 43 72 / 0.08);
+}
+
+/* ---- Runtime brand tokens (overridable per professor / per admin theme) ---- */
+:root {
+  --brand-primary: var(--color-primary-900);
+  --brand-primary-foreground: #ffffff;
+  --brand-secondary: var(--color-secondary-600);
+  --brand-font: var(--font-sans);
+
+  --surface: #F6F4EF;
+  --surface-raised: #ffffff;
+  --border-subtle: var(--color-neutral-200);
+}
+
+@theme inline {
+  --color-brand: var(--brand-primary);
+  --color-brand-foreground: var(--brand-primary-foreground);
+  --color-brand-soft: color-mix(in oklab, var(--brand-primary) 10%, white);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-border-subtle: var(--border-subtle);
+  --font-brand: var(--brand-font);
+}
+
+/* ===================================================================== */
+
+html {
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+
+html[dir="ltr"] {
+  direction: ltr;
+}
+
+body {
+  font-family: var(--font-brand);
+  background-color: var(--color-surface);
+  color: var(--color-neutral-900);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  border-color: var(--color-border-subtle);
+}
+
+::selection {
+  background-color: var(--color-brand);
+  color: var(--color-brand-foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Slim scrollbar, brand-tinted */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-neutral-300);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-neutral-400);
+}
+
+.container-page {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container-page {
+    padding-inline: 1.5rem;
+  }
+}
